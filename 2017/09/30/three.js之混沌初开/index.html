@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>围城随笔</title>
+  <title>Three.js 学习笔记之混沌初开 | 围城随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Three.js 学习笔记之混沌初开 开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。  画卷之基—–Three.js的三要素如何作画？  纸 ——- Scene 笔 ——- Render 眼 ——- Camera  一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。 上纸1var scene = new THREE.Scene()">
+  <meta name="description" content="开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。  画卷之基—–Three.js的三要素如何作画？  纸 ——- Scene 笔 ——- Render 眼 ——- Camera  一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。 上纸1var scene = new THREE.Scene()       //获取场景（Scene） 盯">
 <meta name="keywords" content="前端,js,jquery,javascript,html5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="围城随笔">
+<meta property="og:title" content="Three.js 学习笔记之混沌初开">
 <meta property="og:url" content="/2017/09/30/three.js之混沌初开/index.html">
 <meta property="og:site_name" content="围城随笔">
-<meta property="og:description" content="Three.js 学习笔记之混沌初开 开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。  画卷之基—–Three.js的三要素如何作画？  纸 ——- Scene 笔 ——- Render 眼 ——- Camera  一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。 上纸1var scene = new THREE.Scene()">
+<meta property="og:description" content="开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。  画卷之基—–Three.js的三要素如何作画？  纸 ——- Scene 笔 ——- Render 眼 ——- Camera  一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。 上纸1var scene = new THREE.Scene()       //获取场景（Scene） 盯">
 <meta property="og:image" content="http://7xq7nb.com1.z0.glb.clouddn.com/perspective_camera.png">
-<meta property="og:updated_time" content="2017-09-30T17:08:28.810Z">
+<meta property="og:updated_time" content="2017-09-30T17:11:32.701Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="围城随笔">
-<meta name="twitter:description" content="Three.js 学习笔记之混沌初开 开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。  画卷之基—–Three.js的三要素如何作画？  纸 ——- Scene 笔 ——- Render 眼 ——- Camera  一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。 上纸1var scene = new THREE.Scene()">
+<meta name="twitter:title" content="Three.js 学习笔记之混沌初开">
+<meta name="twitter:description" content="开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。  画卷之基—–Three.js的三要素如何作画？  纸 ——- Scene 笔 ——- Render 眼 ——- Camera  一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。 上纸1var scene = new THREE.Scene()       //获取场景（Scene） 盯">
 <meta name="twitter:image" content="http://7xq7nb.com1.z0.glb.clouddn.com/perspective_camera.png">
   
     <link rel="alternative" href="/atom.xml" title="围城随笔" type="application/atom+xml">
@@ -163,9 +163,24 @@
             <article id="post-three.js之混沌初开" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Three.js 学习笔记之混沌初开
+    </h1>
+  
+
+        
+        <a href="/2017/09/30/three.js之混沌初开/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:13:06.593Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Three-js-学习笔记之混沌初开"><a href="#Three-js-学习笔记之混沌初开" class="headerlink" title="Three.js 学习笔记之混沌初开"></a>Three.js 学习笔记之混沌初开</h1><hr>
+        <hr>
 <p><em>开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。</em></p>
 <hr>
 <h2 id="画卷之基—–Three-js的三要素"><a href="#画卷之基—–Three-js的三要素" class="headerlink" title="画卷之基—–Three.js的三要素"></a>画卷之基—–Three.js的三要素</h2><p>如何作画？</p>
@@ -184,6 +199,7 @@
 <h5 id="取笔"><a href="#取笔" class="headerlink" title="取笔"></a>取笔</h5><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> renderer = <span class="keyword">new</span> <span class="type">THREE</span>.WebGLRenderer(options)  <span class="comment">// 获取渲染器（Renderer）</span></div></pre></td></tr></table></figure>
 <p>渲染器的参数其实是比较多的，但没有参数并不会影响画画。不管钢笔、毛笔、铅笔画个简笔画都成。有一个参数还是建议使用，虽然会影响点性能。<code>{antialias: true }//抗锯齿</code>这会让画看起来细腻一点。  </p>
 <p>装备已齐，接下来便开始作画。</p>
+<p>—<em>未完待续</em>—</p>
 
       
 
