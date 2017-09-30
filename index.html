@@ -156,6 +156,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-three.js之混沌初开" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Three-js-学习笔记之混沌初开"><a href="#Three-js-学习笔记之混沌初开" class="headerlink" title="Three.js 学习笔记之混沌初开"></a>Three.js 学习笔记之混沌初开</h1><hr>
+<p><em>开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。</em></p>
+<hr>
+<h2 id="画卷之基—–Three-js的三要素"><a href="#画卷之基—–Three-js的三要素" class="headerlink" title="画卷之基—–Three.js的三要素"></a>画卷之基—–Three.js的三要素</h2><p>如何作画？</p>
+<ul>
+<li>纸 ——- Scene</li>
+<li>笔 ——- Render</li>
+<li>眼 ——- Camera</li>
+</ul>
+<p>一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。</p>
+<h5 id="上纸"><a href="#上纸" class="headerlink" title="上纸"></a>上纸</h5><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> scene = <span class="keyword">new</span> <span class="type">THREE</span>.Scene()       <span class="comment">//获取场景（Scene）</span></div></pre></td></tr></table></figure>
+<h5 id="盯好"><a href="#盯好" class="headerlink" title="盯好"></a>盯好</h5><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> camera = new THREE.PerspectiveCamera(fov, aspect, <span class="keyword">near</span>, <span class="keyword">far</span>) <span class="comment">// 获取相机（Camera）</span></div></pre></td></tr></table></figure>
+<p>你需要5.0的视力才能看清美好的世界，但偏偏是4.0，所以参数这么写就OK。<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fov    <span class="comment">------  75</span></div><div class="line">aspect <span class="comment">------  window.innerWidth/window.innerHeight</span></div><div class="line">near   <span class="comment">------  0.1</span></div><div class="line">far    <span class="comment">------  1000</span></div><div class="line">// what<span class="symbol">'s</span> fuck 玩意？</div></pre></td></tr></table></figure></p>
+<p>好在不懂可以问老师。  </p>
+<p><a href="https://threejs.org/docs/index.html#api/cameras/PerspectiveCamera" target="_blank" rel="external">three.js文档</a>  这位老师虽然权威，让人能读懂那还算权威吗？可能是我智商有限。<br><a href="https://aotu.io/notes/2017/08/28/getting-started-with-threejs/" target="_blank" rel="external">auto实验室–three.js先学现卖</a>  比较不错的一篇文章，就是比较短。<br><a href="https://teakki.com/p/58a3ef1bf0d40775548c908f" target="_blank" rel="external">TeaKKi</a> 比较容易理解的图示及介绍，毕竟中文。  </p>
+<p>老师说了<br>参数   | 描述<br> —– |—–<br> fov   | fov 表示视场，即摄像机能看到的视野。比如，人类有接近 180 度的视场，而有些鸟类有接近 360 度的视场。但是由于计算机不能完全显示我们能够所看到的景象，所以一般会选择一块较小的区域。对于游戏而言，视场大小通常为 60 ~ 90 度。推荐默认值为：50|<br> aspect    |指定渲染结果的横向尺寸和纵向尺寸的比值。在我们的示例中，由于使用窗口作为输出界面，所有使用的是窗口的长宽比。推荐默认值：window.innerWidth / window.innerHeight<br>| near      |指定从距离摄像机多近的距离开始渲染。推荐默认值：0.1<br> far       |指定摄像机从它所处的位置开始能看到多远。若过小，那么场景中的远处不会被渲染；若过大，可能会影响性能。推荐默认值：1000<br><img src="http://7xq7nb.com1.z0.glb.clouddn.com/perspective_camera.png" alt="img"><br><em>上摘自<a href="https://aotu.io" target="_blank" rel="external">auto实验室</a></em><br>如图，fov可以视为一个角度，加上长宽比则可以定义出一片类似锥形的区域，在根据远近两点，则可以确定一个渲染区域，或者说一个可视区域。就如同在打3D游戏的时候会发现远处的地方是看不清的。当你开启高画质的时候，就能看到远处的山，当然高画质不是由这几个简单参数确定的。<br>简单来说就是由这几个参数确定一块让你4.0的视力能看清楚的地方。</p>
+<h5 id="取笔"><a href="#取笔" class="headerlink" title="取笔"></a>取笔</h5><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> renderer = <span class="keyword">new</span> <span class="type">THREE</span>.WebGLRenderer(options)  <span class="comment">// 获取渲染器（Renderer）</span></div></pre></td></tr></table></figure>
+<p>渲染器的参数其实是比较多的，但没有参数并不会影响画画。不管钢笔、毛笔、铅笔画个简笔画都成。有一个参数还是建议使用，虽然会影响点性能。<code>{antialias: true }//抗锯齿</code>这会让画看起来细腻一点。  </p>
+<p>装备已齐，接下来便开始作画。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/30/three.js之混沌初开/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
