@@ -163,13 +163,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/30/three.js之混沌初开/">Three.js 学习笔记之混沌初开</a>
+      <a class="article-title" href="/2017/10/06/three.js之混沌初开/">Three.js 学习笔记之混沌初开</a>
     </h1>
   
 
         
-        <a href="/2017/09/30/three.js之混沌初开/" class="archive-article-date">
-  	<time datetime="2017-09-30T15:13:06.593Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+        <a href="/2017/10/06/three.js之混沌初开/" class="archive-article-date">
+  	<time datetime="2017-10-06T06:37:52.563Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
 </a>
         
       </header>
@@ -179,7 +179,7 @@
         <hr>
 <p><em>开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。</em></p>
 <hr>
-<h2 id="画卷之基—–Three-js的三要素"><a href="#画卷之基—–Three-js的三要素" class="headerlink" title="画卷之基—–Three.js的三要素"></a>画卷之基—–Three.js的三要素</h2><p>如何作画？</p>
+<h2 id="画卷之基—–Three-js的三大组件"><a href="#画卷之基—–Three-js的三大组件" class="headerlink" title="画卷之基—–Three.js的三大组件"></a>画卷之基—–Three.js的三大组件</h2><p>如何作画？</p>
 <ul>
 <li>纸 ——- Scene</li>
 <li>笔 ——- Render</li>
@@ -219,11 +219,20 @@
 </tbody>
 </table>
 <p><img src="http://7xq7nb.com1.z0.glb.clouddn.com/perspective_camera.png" alt="img"><br><em>上摘自<a href="https://aotu.io" target="_blank" rel="external">auto实验室</a></em><br>如图，fov可以视为一个角度，加上长宽比则可以定义出一片类似锥形的区域，在根据远近两点，则可以确定一个渲染区域，或者说一个可视区域。就如同在打3D游戏的时候会发现远处的地方是看不清的。当你开启高画质的时候，就能看到远处的山，当然高画质不是由这几个简单参数确定的。<br>简单来说就是由这几个参数确定一块让你4.0的视力能看清楚的地方。</p>
-<h5 id="取笔"><a href="#取笔" class="headerlink" title="取笔"></a>取笔</h5><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> renderer = <span class="keyword">new</span> <span class="type">THREE</span>.WebGLRenderer(options)  <span class="comment">// 获取渲染器（Renderer）</span></div></pre></td></tr></table></figure>
-<p>渲染器的参数其实是比较多的，但没有参数并不会影响画画。不管钢笔、毛笔、铅笔画个简笔画都成。有一个参数还是建议使用，虽然会影响点性能。<code>{antialias: true }//抗锯齿</code>这会让画看起来细腻一点。  </p>
-<p>装备已齐，接下来便开始作画。</p>
-<p>—<em>未完待续</em>—</p>
-
+<h5 id="取笔"><a href="#取笔" class="headerlink" title="取笔"></a>取笔</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> renderer = <span class="keyword">new</span> THREE.WebGLRenderer(options)  <span class="comment">// 获取渲染器（Renderer）</span></div></pre></td></tr></table></figure>
+<p>渲染器的参数其实是比较多的，但没有参数并不会影响画画。不管钢笔、毛笔、铅笔画个简笔画都成。有一个参数还是建议使用，虽然会影响点性能。<code>{antialias: true }//抗锯齿</code>这会让画看起来细腻一点。<br>接下来还需要一块画板,需要一个DOM元素来承载它。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">renderer.setSize(width, height)    <span class="comment">// 规定它的大小</span></div><div class="line">dom.appendChild(renderer.domElement)    <span class="comment">// 添加到dom中，此时便可以看到一片漆黑的canvas了。</span></div></pre></td></tr></table></figure></p>
+<p>装备已齐，接下来便开始作画。<br>大笔一挥却不知要画什么？画圆还是画方，用油墨还是水墨？这便是Three.js中的绘图要素。</p>
+<h2 id="画卷之材-—–-Three-js的图像表示"><a href="#画卷之材-—–-Three-js的图像表示" class="headerlink" title="画卷之材 —– Three.js的图像表示"></a>画卷之材 —– Three.js的图像表示</h2><ul>
+<li>Geometry  结构</li>
+<li>Material   材质</li>
+<li>Mesh   网格<br>用铅笔画一个正方形需要什么？<br>首先需要知道正方向长什么样，这便是Three.js的几何结构 Geometry；那就先挑一个方的结构出来，<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.BoxGeometry(width, height, depth)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其次是要用比较黑的2B铅笔还是略浅的HB？这便是Material。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> material = <span class="keyword">new</span> THREE.MeshBasicMaterial(&#123;<span class="attr">color</span>: <span class="string">'#f0f'</span>&#125;)</div></pre></td></tr></table></figure></p>
+<p>电脑和人终究不一样，在Three.js中你还需要网格（Mesh）来包裹住结构（Geometry）和材质（Material），然后将它们置于场景（Scene）中。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mesh = <span class="keyword">new</span> THREE.Mesh(geometry, material)</div><div class="line">scene.add(mesh)</div></pre></td></tr></table></figure></p>
+<p>最后一步，渲染<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">renderer.render(scene, camera)</div></pre></td></tr></table></figure></p>
+<p>上一个完整的示例</p>
+<iframe style="width: 100%; height: 300px" src="http://sandbox.runjs.cn/show/ky37icld" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
       
 
       
@@ -235,7 +244,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/30/three.js之混沌初开/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/06/three.js之混沌初开/">展开全文 >></a>
         </p>
       
 
