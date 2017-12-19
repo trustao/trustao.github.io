@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>Archives: 2017/9 | 围城随笔</title>
+  <title>node项目中使用.yaml做配置文件 | 围城随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5">
-<meta property="og:type" content="website">
-<meta property="og:title" content="围城随笔">
-<meta property="og:url" content="/archives/2017/09/index.html">
+  <meta name="description" content="#  YAML简介YAML是专门用于写配置文件的语言，语法简单使用，在很多项目中都使用它作为配置文件。简单语法说明：  与python类似，YAML使用缩进来表示层级关系。 三种数据结构 对象、数组、纯量 字符串无需使用引号，但中间有空格时需用引号。 单引号会对字符进行转义，双引号不会    示例：12345678910server: port: 3000 host: 0.0.0.0hash: n">
+<meta name="keywords" content="node 项目配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node项目中使用.yaml做配置文件">
+<meta property="og:url" content="/2017/10/05/node项目中使用.yaml做配置文件/index.html">
 <meta property="og:site_name" content="围城随笔">
+<meta property="og:description" content="#  YAML简介YAML是专门用于写配置文件的语言，语法简单使用，在很多项目中都使用它作为配置文件。简单语法说明：  与python类似，YAML使用缩进来表示层级关系。 三种数据结构 对象、数组、纯量 字符串无需使用引号，但中间有空格时需用引号。 单引号会对字符进行转义，双引号不会    示例：12345678910server: port: 3000 host: 0.0.0.0hash: n">
+<meta property="og:updated_time" content="2017-12-19T05:57:03.364Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="围城随笔">
+<meta name="twitter:title" content="node项目中使用.yaml做配置文件">
+<meta name="twitter:description" content="#  YAML简介YAML是专门用于写配置文件的语言，语法简单使用，在很多项目中都使用它作为配置文件。简单语法说明：  与python类似，YAML使用缩进来表示层级关系。 三种数据结构 对象、数组、纯量 字符串无需使用引号，但中间有空格时需用引号。 单引号会对字符进行转义，双引号不会    示例：12345678910server: port: 3000 host: 0.0.0.0hash: n">
   
     <link rel="alternative" href="/atom.xml" title="围城随笔" type="application/atom+xml">
   
@@ -154,49 +158,200 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-node项目中使用.yaml做配置文件" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/28/hello-world/" class="archive-article-date">
-  	<time datetime="2017-09-28T15:46:01.843Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      node项目中使用.yaml做配置文件
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2017/10/05/node项目中使用.yaml做配置文件/" class="archive-article-date">
+  	<time datetime="2017-10-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p># </p>
+<h2 id="YAML简介"><a href="#YAML简介" class="headerlink" title="YAML简介"></a>YAML简介</h2><p>YAML是专门用于写配置文件的语言，语法简单使用，在很多项目中都使用它作为配置文件。<br>简单语法说明：</p>
+<ul>
+<li>与python类似，YAML使用缩进来表示层级关系。</li>
+<li>三种数据结构 对象、数组、纯量</li>
+<li>字符串无需使用引号，但中间有空格时需用引号。</li>
+<li>单引号会对字符进行转义，双引号不会  </li>
+</ul>
+<p>示例：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">server:</span></div><div class="line"><span class="symbol"> port:</span> <span class="number">3000</span></div><div class="line"><span class="symbol"> host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></div><div class="line"><span class="symbol">hash:</span></div><div class="line"><span class="symbol"> name:</span> dog</div><div class="line"><span class="symbol"> age:</span> <span class="number">1</span></div><div class="line"><span class="symbol"> foods:</span></div><div class="line">  - sausage</div><div class="line">  - milk</div><div class="line">  - shit</div></pre></td></tr></table></figure></p>
+<p>等同于json：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"server"</span>: &#123;</div><div class="line">        <span class="attr">"port"</span>: <span class="number">3000</span>,</div><div class="line">        <span class="attr">"host"</span>: <span class="string">"0.0.0.0"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"hash"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"dog"</span>,</div><div class="line">        <span class="attr">"age"</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">"foods"</span>: [<span class="string">"sausage"</span>, <span class="string">"milk"</span>, <span class="string">"shit"</span>]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="node项目中使用"><a href="#node项目中使用" class="headerlink" title="node项目中使用"></a>node项目中使用</h2><p>引入yaml文件需要安装js-yaml依赖，与cross-env、config配合使用更加方便。我们从零开始，做一个简单的demo, 实现使用不同模式node服务运行到不同端口。  </p>
+<h4 id="创建package-json文件"><a href="#创建package-json文件" class="headerlink" title="创建package.json文件"></a>创建package.json文件</h4><p>选择一个空目录创建package.json文件<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> init</div></pre></td></tr></table></figure></p>
+<h4 id="安装依赖："><a href="#安装依赖：" class="headerlink" title="安装依赖："></a>安装依赖：</h4><figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm i --<span class="built_in">save</span> express   <span class="comment">// 用express做一个简单web服务</span></div><div class="line">npm i --<span class="built_in">save</span>-<span class="built_in">dev</span> <span class="built_in">cross</span>-env <span class="comment">// 解决windows 不支持NODE_ENV直接配置</span></div><div class="line">npm i --<span class="built_in">save</span>-<span class="built_in">dev</span> config <span class="comment">// 用于读取config文件，支持.json / .yaml(需下载依赖js-yaml)</span></div><div class="line">npm i --<span class="built_in">save</span>-<span class="built_in">dev</span> js-yaml  <span class="comment">//用于.yaml文件的读取</span></div></pre></td></tr></table></figure>
+<p>安装完成即可看到package.json变成如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"dependencies"</span>: &#123;</div><div class="line">        <span class="attr">"express"</span>: <span class="string">"^4.15.3"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"devDependencies"</span>: &#123;</div><div class="line">        <span class="attr">"config"</span>: <span class="string">"^1.26.2"</span>,</div><div class="line">        <span class="attr">"cross-env"</span>: <span class="string">"^5.0.5"</span>,</div><div class="line">        <span class="attr">"js-yaml"</span>: <span class="string">"^3.10.0"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>此时根目录下有了node_modules。</p>
+<h4 id="创建config文件"><a href="#创建config文件" class="headerlink" title="创建config文件"></a>创建config文件</h4><p>在根目录下创建config目录，在其中创建default.yaml文件，写入代码<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">port:</span> <span class="number">3000</span></div></pre></td></tr></table></figure></p>
+<p>创建test.yaml文件，写入代码<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">port:</span> <span class="number">4000</span></div></pre></td></tr></table></figure></p>
+<h4 id="创建app-js（web服务文件）"><a href="#创建app-js（web服务文件）" class="headerlink" title="创建app.js（web服务文件）"></a>创建app.js（web服务文件）</h4><p>在根目录下创建app.js写一个简单web服务。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="keyword">var</span> config = <span class="built_in">require</span>(<span class="string">'config'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> port = config.get(<span class="string">'port'</span>)</div><div class="line"><span class="keyword">var</span> server = app.listen(port ,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'express started  port '</span> + port);</div><div class="line">&#125;)</div><div class="line">app.get(<span class="string">'/*'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</div><div class="line">    res.send(<span class="string">"运行于"</span>+ port + <span class="string">"端口"</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h4 id="在packge-json中编写指令"><a href="#在packge-json中编写指令" class="headerlink" title="在packge.json中编写指令"></a>在packge.json中编写指令</h4><p>在之前基础上加入<code>&quot;scripts&quot;</code><br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"scripts"</span>: &#123;</div><div class="line">        <span class="string">"dev"</span>: <span class="string">"node app"</span>,</div><div class="line">        <span class="string">"test"</span>：<span class="string">"cross-env NODE-ENV=test node app"</span> <span class="comment">//设置环境变量为test</span></div><div class="line">    &#125;,</div><div class="line">    <span class="string">"dependencies"</span>: &#123;</div><div class="line">        ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>此时执行指令<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">run</span><span class="bash"> dev</span></div></pre></td></tr></table></figure></p>
+<p>可以看到打印信息<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">express started <span class="built_in"> port </span>3000</div></pre></td></tr></table></figure></p>
+<p>执行<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">run</span><span class="bash"> <span class="built_in">test</span></span></div></pre></td></tr></table></figure></p>
+<p>可以看到打印信息<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">express started <span class="built_in"> port </span>4000</div></pre></td></tr></table></figure></p>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>config.js会根据<code>NODE_ENV</code>的值取到<code>/config</code>目录下相应变量名的文件，没有则为<code>default.yaml</code>。具体api可以看<code>/node_modules/config/README.MD</code>。<br>使用非常简单。</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node 项目配置</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:/2017/10/05/node项目中使用.yaml做配置文件/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/11/10/webpack 1.x 升至 webpack 3.x 相关资料/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          webpack 1.x 升至 webpack 3.x 相关资料
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/10/01/three.js之混沌初开/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Three.js 学习笔记之混沌初开</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -219,8 +374,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -284,6 +439,22 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node 项目配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">three.js</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

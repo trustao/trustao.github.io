@@ -6,21 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>Three.js 学习笔记之混沌初开 | 围城随笔</title>
+  <title>Tag: css3 | 围城随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。  画卷之基—–Three.js的三大组件如何作画？  纸 ——- Scene 笔 ——- Render 眼 ——- Camera  一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。 上纸1var scene = new THREE.Scene()       //获取场景（Scene）">
-<meta name="keywords" content="前端,js,jquery,javascript,html5">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Three.js 学习笔记之混沌初开">
-<meta property="og:url" content="/2017/10/06/three.js之混沌初开/index.html">
+  <meta name="keywords" content="前端,js,jquery,javascript,html5">
+<meta property="og:type" content="website">
+<meta property="og:title" content="围城随笔">
+<meta property="og:url" content="/tags/css3/index.html">
 <meta property="og:site_name" content="围城随笔">
-<meta property="og:description" content="开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。  画卷之基—–Three.js的三大组件如何作画？  纸 ——- Scene 笔 ——- Render 眼 ——- Camera  一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。 上纸1var scene = new THREE.Scene()       //获取场景（Scene）">
-<meta property="og:image" content="http://7xq7nb.com1.z0.glb.clouddn.com/perspective_camera.png">
-<meta property="og:updated_time" content="2017-10-06T06:37:52.564Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Three.js 学习笔记之混沌初开">
-<meta name="twitter:description" content="开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。  画卷之基—–Three.js的三大组件如何作画？  纸 ——- Scene 笔 ——- Render 眼 ——- Camera  一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。 上纸1var scene = new THREE.Scene()       //获取场景（Scene）">
-<meta name="twitter:image" content="http://7xq7nb.com1.z0.glb.clouddn.com/perspective_camera.png">
+<meta name="twitter:title" content="围城随笔">
   
     <link rel="alternative" href="/atom.xml" title="围城随笔" type="application/atom+xml">
   
@@ -160,211 +154,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-three.js之混沌初开" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Three.js 学习笔记之混沌初开
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/08/25/css之filter/" class="archive-article-date">
+  	<time datetime="2017-08-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/25/css之filter/">css之fliter属性</a>
     </h1>
   
 
-        
-        <a href="/2017/10/06/three.js之混沌初开/" class="archive-article-date">
-  	<time datetime="2017-10-06T06:37:52.563Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p><em>开启Web3D世界之旅，美丽的画卷终将在指尖跳跃。</em></p>
-<hr>
-<h2 id="画卷之基—–Three-js的三大组件"><a href="#画卷之基—–Three-js的三大组件" class="headerlink" title="画卷之基—–Three.js的三大组件"></a>画卷之基—–Three.js的三大组件</h2><p>如何作画？</p>
-<ul>
-<li>纸 ——- Scene</li>
-<li>笔 ——- Render</li>
-<li>眼 ——- Camera</li>
-</ul>
-<p>一幅画的开始必然需要一张纸、一只笔，然后眼观之、笔画之。仿佛又回到小学一年级的绘画课，先尝试一幅简笔画吧。</p>
-<h5 id="上纸"><a href="#上纸" class="headerlink" title="上纸"></a>上纸</h5><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> scene = <span class="keyword">new</span> <span class="type">THREE</span>.Scene()       <span class="comment">//获取场景（Scene）</span></div></pre></td></tr></table></figure>
-<h5 id="盯好"><a href="#盯好" class="headerlink" title="盯好"></a>盯好</h5><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> camera = new THREE.PerspectiveCamera(fov, aspect, <span class="keyword">near</span>, <span class="keyword">far</span>) <span class="comment">// 获取相机（Camera）</span></div></pre></td></tr></table></figure>
-<p>你需要5.0的视力才能看清美好的世界，但偏偏是4.0，所以参数这么写就OK。<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fov    <span class="comment">------  75</span></div><div class="line">aspect <span class="comment">------  window.innerWidth/window.innerHeight</span></div><div class="line">near   <span class="comment">------  0.1</span></div><div class="line">far    <span class="comment">------  1000</span></div><div class="line">// what<span class="symbol">'s</span> fuck 玩意？</div></pre></td></tr></table></figure></p>
-<p>好在不懂可以问老师。  </p>
-<p><a href="https://threejs.org/docs/index.html#api/cameras/PerspectiveCamera" target="_blank" rel="external">three.js文档</a>  这位老师虽然权威，让人能读懂那还算权威吗？可能是我智商有限。<br><a href="https://aotu.io/notes/2017/08/28/getting-started-with-threejs/" target="_blank" rel="external">auto实验室–three.js先学现卖</a>  比较不错的一篇文章，就是比较短。<br><a href="https://teakki.com/p/58a3ef1bf0d40775548c908f" target="_blank" rel="external">TeaKKi</a> 比较容易理解的图示及介绍，毕竟中文。  </p>
-<p>老师说了  </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">fov</td>
-<td>fov 表示视场，即摄像机能看到的视野。比如，人类有接近 180 度的视场，而有些鸟类有接近 360 度的视场。但是由于计算机不能完全显示我们能够所看到的景象，所以一般会选择一块较小的区域。对于游戏而言，视场大小通常为 60 ~ 90 度。推荐默认值为：50</td>
-</tr>
-<tr>
-<td style="text-align:center">aspect</td>
-<td>指定渲染结果的横向尺寸和纵向尺寸的比值。在我们的示例中，由于使用窗口作为输出界面，所有使用的是窗口的长宽比。推荐默认值：window.innerWidth / window.innerHeight</td>
-</tr>
-<tr>
-<td style="text-align:center">near</td>
-<td>指定从距离摄像机多近的距离开始渲染。推荐默认值：0.1</td>
-</tr>
-<tr>
-<td style="text-align:center">far</td>
-<td>指定摄像机从它所处的位置开始能看到多远。若过小，那么场景中的远处不会被渲染；若过大，可能会影响性能。推荐默认值：1000</td>
-</tr>
-</tbody>
-</table>
-<p><img src="http://7xq7nb.com1.z0.glb.clouddn.com/perspective_camera.png" alt="img"><br><em>上摘自<a href="https://aotu.io" target="_blank" rel="external">auto实验室</a></em><br>如图，fov可以视为一个角度，加上长宽比则可以定义出一片类似锥形的区域，在根据远近两点，则可以确定一个渲染区域，或者说一个可视区域。就如同在打3D游戏的时候会发现远处的地方是看不清的。当你开启高画质的时候，就能看到远处的山，当然高画质不是由这几个简单参数确定的。<br>简单来说就是由这几个参数确定一块让你4.0的视力能看清楚的地方。</p>
-<h5 id="取笔"><a href="#取笔" class="headerlink" title="取笔"></a>取笔</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> renderer = <span class="keyword">new</span> THREE.WebGLRenderer(options)  <span class="comment">// 获取渲染器（Renderer）</span></div></pre></td></tr></table></figure>
-<p>渲染器的参数其实是比较多的，但没有参数并不会影响画画。不管钢笔、毛笔、铅笔画个简笔画都成。有一个参数还是建议使用，虽然会影响点性能。<code>{antialias: true }//抗锯齿</code>这会让画看起来细腻一点。<br>接下来还需要一块画板,需要一个DOM元素来承载它。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">renderer.setSize(width, height)    <span class="comment">// 规定它的大小</span></div><div class="line">dom.appendChild(renderer.domElement)    <span class="comment">// 添加到dom中，此时便可以看到一片漆黑的canvas了。</span></div></pre></td></tr></table></figure></p>
-<p>装备已齐，接下来便开始作画。<br>大笔一挥却不知要画什么？画圆还是画方，用油墨还是水墨？这便是Three.js中的绘图要素。</p>
-<h2 id="画卷之材-—–-Three-js的图像表示"><a href="#画卷之材-—–-Three-js的图像表示" class="headerlink" title="画卷之材 —– Three.js的图像表示"></a>画卷之材 —– Three.js的图像表示</h2><ul>
-<li>Geometry  结构</li>
-<li>Material   材质</li>
-<li>Mesh   网格<br>用铅笔画一个正方形需要什么？<br>首先需要知道正方向长什么样，这便是Three.js的几何结构 Geometry；那就先挑一个方的结构出来，<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.BoxGeometry(width, height, depth)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>其次是要用比较黑的2B铅笔还是略浅的HB？这便是Material。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> material = <span class="keyword">new</span> THREE.MeshBasicMaterial(&#123;<span class="attr">color</span>: <span class="string">'#f0f'</span>&#125;)</div></pre></td></tr></table></figure></p>
-<p>电脑和人终究不一样，在Three.js中你还需要网格（Mesh）来包裹住结构（Geometry）和材质（Material），然后将它们置于场景（Scene）中。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mesh = <span class="keyword">new</span> THREE.Mesh(geometry, material)</div><div class="line">scene.add(mesh)</div></pre></td></tr></table></figure></p>
-<p>最后一步，渲染<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">renderer.render(scene, camera)</div></pre></td></tr></table></figure></p>
-<p>上一个完整的示例</p>
-<iframe style="width: 100%; height: 300px" src="http://sandbox.runjs.cn/show/ky37icld" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-      
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">css3</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
+          
+
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http:/2017/10/06/three.js之混沌初开/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
   
   
-    <a href="/2017/09/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -387,9 +230,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -452,6 +295,22 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node 项目配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">three.js</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

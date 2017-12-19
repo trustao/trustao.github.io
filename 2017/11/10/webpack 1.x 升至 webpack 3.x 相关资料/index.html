@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>Archives: 2017 | 围城随笔</title>
+  <title>webpack 1.x 升至 webpack 3.x 相关资料 | 围城随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5">
-<meta property="og:type" content="website">
-<meta property="og:title" content="围城随笔">
-<meta property="og:url" content="/archives/2017/index.html">
+  <meta name="description" content="webpack最新版本为3.9.1，之前公司项目仍在1.13版本下进行打包。暴露出一些问题，如打包速度慢，不能按需打包，编译完成的代码冗余，臃肿。因此做一下升级，在此记录所遇到的问题。原先项目需进行依赖包升级后才能正常运行。npm update 如出错，可逐个删除后安装。 版本升级 webpack配置修改1、resolve配置用于引入资源是路径相关配置1.x版本写法1234567resolve:">
+<meta name="keywords" content="three.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack 1.x 升至 webpack 3.x 相关资料">
+<meta property="og:url" content="/2017/11/10/webpack 1.x 升至 webpack 3.x 相关资料/index.html">
 <meta property="og:site_name" content="围城随笔">
+<meta property="og:description" content="webpack最新版本为3.9.1，之前公司项目仍在1.13版本下进行打包。暴露出一些问题，如打包速度慢，不能按需打包，编译完成的代码冗余，臃肿。因此做一下升级，在此记录所遇到的问题。原先项目需进行依赖包升级后才能正常运行。npm update 如出错，可逐个删除后安装。 版本升级 webpack配置修改1、resolve配置用于引入资源是路径相关配置1.x版本写法1234567resolve:">
+<meta property="og:updated_time" content="2017-12-19T05:57:03.330Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="围城随笔">
+<meta name="twitter:title" content="webpack 1.x 升至 webpack 3.x 相关资料">
+<meta name="twitter:description" content="webpack最新版本为3.9.1，之前公司项目仍在1.13版本下进行打包。暴露出一些问题，如打包速度慢，不能按需打包，编译完成的代码冗余，臃肿。因此做一下升级，在此记录所遇到的问题。原先项目需进行依赖包升级后才能正常运行。npm update 如出错，可逐个删除后安装。 版本升级 webpack配置修改1、resolve配置用于引入资源是路径相关配置1.x版本写法1234567resolve:">
   
     <link rel="alternative" href="/atom.xml" title="围城随笔" type="application/atom+xml">
   
@@ -154,36 +158,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-webpack 1.x 升至 webpack 3.x 相关资料" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      webpack 1.x 升至 webpack 3.x 相关资料
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/10/webpack 1.x 升至 webpack 3.x 相关资料/" class="archive-article-date">
+
+        
+        <a href="/2017/11/10/webpack 1.x 升至 webpack 3.x 相关资料/" class="archive-article-date">
   	<time datetime="2017-11-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/10/webpack 1.x 升至 webpack 3.x 相关资料/">webpack 1.x 升至 webpack 3.x 相关资料</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>webpack最新版本为3.9.1，之前公司项目仍在1.13版本下进行打包。暴露出一些问题，如打包速度慢，不能按需打包，编译完成的代码冗余，臃肿。因此做一下升级，在此记录所遇到的问题。<br>原先项目需进行依赖包升级后才能正常运行。<code>npm update</code> 如出错，可逐个删除后安装。</p>
+<h2 id="版本升级"><a href="#版本升级" class="headerlink" title="版本升级"></a>版本升级</h2><ul>
+<li><h3 id="webpack配置修改"><a href="#webpack配置修改" class="headerlink" title="webpack配置修改"></a>webpack配置修改</h3><h4 id="1、resolve配置"><a href="#1、resolve配置" class="headerlink" title="1、resolve配置"></a>1、resolve配置</h4><em>用于引入资源是路径相关配置</em><br>1.x版本写法<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">resolve: &#123;</div><div class="line">    extensions: [<span class="string">''</span>, <span class="string">'.vue'</span>, <span class="string">'.js'</span>, <span class="string">'.json'</span>],</div><div class="line">    modulesDirectories: [<span class="string">'node_modules'</span>, <span class="string">'src'</span>],</div><div class="line">    alias: &#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2.x 及上版本<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 取消了用于引入无后缀文件的 空字符串</span></div><div class="line">resolve: &#123;</div><div class="line">    extensions: [<span class="string">'.js'</span>, <span class="string">'.jsx'</span>, <span class="string">'.less'</span>, <span class="string">'.scss'</span>, <span class="string">'.css'</span>],</div><div class="line">    modules: [</div><div class="line">      path.resolve(__dirname, <span class="string">'node_modules'</span>),</div><div class="line">      path.join(__dirname, <span class="string">'./src'</span>)</div><div class="line">    ]</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h4 id="2、-module配置"><a href="#2、-module配置" class="headerlink" title="2、 module配置"></a>2、 module配置</h4><p><em>用于配置各类loader</em><br>1.x版本<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">        <span class="comment">//各种加载器，即让各种文件格式可用require引用</span></div><div class="line">        loaders: [</div><div class="line">            &#123;</div><div class="line">               test: <span class="regexp">/\.js$/</span>, <span class="attr">exclude</span>: [node_modules_dir, lib_dir], <span class="attr">loader</span>: <span class="string">"babel"</span>,</div><div class="line">               query: &#123;</div><div class="line">                   compact: <span class="literal">false</span>,</div><div class="line">                   presets: [<span class="string">'es2015'</span>,<span class="string">"stage-0"</span>],</div><div class="line">                   plugins: [<span class="string">'transform-runtime'</span>]</div><div class="line">               &#125;</div><div class="line">            &#125;,</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>: ExtractTextPlugin.extract(<span class="string">"style-loader"</span>,<span class="string">"css-loader!postcss-loader"</span>) &#125;,</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.less$/</span>, <span class="attr">loader</span>: ExtractTextPlugin.extract(<span class="string">"style-loader"</span>,<span class="string">"css-loader!less-loader"</span>) &#125;,</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/</span>, <span class="attr">loader</span>: <span class="string">"file-loader?name=../fonts/[hash].[ext]"</span> &#125;,</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.(jpe?g|png|gif)$/i</span>, <span class="attr">loader</span>: <span class="string">"url-loader?limit=8192&amp;name=../images/[hash].[ext]"</span> &#125;,</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.vue$/</span>, <span class="attr">loader</span>:<span class="string">"vue"</span> &#125;</div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&lt;!-- more --&gt;</div></pre></td></tr></table></figure></p>
+<p>2.x及以上<br>关键字段改变，<br><code>（1）loaders =&gt; rules</code><br><code>（2）loader =&gt; use</code> 值由之前的<code>字符串加！</code>变为<code>数组</code>，并且不允许简写。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">    rules: [&#123;</div><div class="line">        test: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">        use: [<span class="string">'babel-loader'</span>],</div><div class="line">        exclude: [node_modules_dir, lib_dir]</div><div class="line">      &#125;, &#123;</div><div class="line">        test: <span class="regexp">/\.(less|css)$/</span>,</div><div class="line">        <span class="comment">// use: ["style-loader", "css-loader", "less-loader", "postcss-loader"]</span></div><div class="line">        use: ExtractTextPlugin.extract(&#123;</div><div class="line">          fallback: <span class="string">'style-loader'</span>,</div><div class="line">          <span class="comment">//resolve-url-loader may be chained before sass-loader if necessary</span></div><div class="line">          use: [<span class="string">'css-loader'</span>, <span class="string">'less-loader'</span>]</div><div class="line">        &#125;)</div><div class="line">      &#125;, &#123;</div><div class="line">        test:  <span class="regexp">/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/</span>,</div><div class="line">        use: [<span class="string">'file-loader?limit=10000&amp;name=../fonts/[hash].[ext]'</span>]</div><div class="line">      &#125;, &#123;</div><div class="line">        test: <span class="regexp">/\.(png|jpg|gif|md)$/</span>,</div><div class="line">        use: [<span class="string">'file-loader?limit=10000&amp;name=../images/[hash].[ext]'</span>]</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="2、-plugins配置"><a href="#2、-plugins配置" class="headerlink" title="2、 plugins配置"></a>2、 plugins配置</h4><p><em>用于配置各类插件</em><br>1.x版本<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line">    <span class="keyword">new</span> AssetsPlugin(&#123;</div><div class="line">        prettyPrint: <span class="literal">true</span>,</div><div class="line">        fullPath: <span class="literal">false</span></div><div class="line">    &#125;),</div><div class="line">    <span class="keyword">new</span> webpack.optimize.OccurenceOrderPlugin(),</div><div class="line">    <span class="keyword">new</span> webpack.NoErrorsPlugin(),</div><div class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin()</div><div class="line">    <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">'vendor'</span>, <span class="string">'vendor.js'</span>),</div><div class="line">]</div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line"><span class="string">2.x 版本  </span></div><div class="line"><span class="string">移除了`</span>OccurenceOrderPlugin<span class="string">` 和 `</span>NoErrorsPlugin<span class="string">`    </span></div><div class="line"><span class="string">用于打包公用依赖的`</span>CommonsChunkPlugin<span class="string">`传参方式改变。代码如下：</span></div><div class="line"><span class="string">`</span><span class="string">``</span>js</div><div class="line">plugins: [</div><div class="line">    <span class="keyword">new</span> AssetsPlugin(&#123;</div><div class="line">        prettyPrint: <span class="literal">true</span>,</div><div class="line">        fullPath: <span class="literal">false</span></div><div class="line">    &#125;),</div><div class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin()</div><div class="line">    <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123; </div><div class="line">        name: <span class="string">'vendor'</span>, </div><div class="line">        filename: <span class="string">'vendor.bundle.js'</span> </div><div class="line">    &#125;)</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<ul>
+<li><h3 id="相关依赖升级"><a href="#相关依赖升级" class="headerlink" title="相关依赖升级"></a>相关依赖升级</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">webpack ^<span class="number">1.13</span><span class="number">.1</span> ===&gt; ^<span class="number">3.9</span><span class="number">.1</span></div><div class="line">extract-text-webpack-plugin ^<span class="number">1.0</span><span class="number">.1</span> ===&gt; ^<span class="number">3.0</span><span class="number">.2</span></div><div class="line">npm update webpack</div><div class="line">npm update extract-text-webpack-plugin</div><div class="line"><span class="comment">// 如出错可在node_modules中删除依赖包后重新安装。</span></div></pre></td></tr></table></figure>
+</li>
+<li><h3 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h3><h5 id="vue-loader-在webpack2-x版本变更。"><a href="#vue-loader-在webpack2-x版本变更。" class="headerlink" title="vue-loader 在webpack2.x版本变更。"></a>vue-loader 在webpack2.x版本变更。</h5><p>1.x版本中,作为单独的一个根属性配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">entry:...</div><div class="line">output:...</div><div class="line"><span class="built_in">module</span>:...</div><div class="line">vue: &#123;</div><div class="line">        loaders: &#123;</div><div class="line">            css: ExtractTextPlugin.extract(<span class="string">'css'</span>),</div><div class="line">            less: ExtractTextPlugin.extract(<span class="string">'css!less-loader'</span>)</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2.x版本，配置到loader中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">    rules: [</div><div class="line">        ...</div><div class="line">        &#123;</div><div class="line">            test: <span class="regexp">/\.vue$/</span>,</div><div class="line">            loader: <span class="string">'vue-loader'</span>,</div><div class="line">            options: &#123;</div><div class="line">              loaders: &#123;</div><div class="line">                css: ExtractTextPlugin.extract(&#123;</div><div class="line">                  use: <span class="string">'css-loader'</span>,</div><div class="line">                  fallback: <span class="string">'vue-style-loader'</span></div><div class="line">                &#125;),</div><div class="line">                less: ExtractTextPlugin.extract(&#123;</div><div class="line">                  use: [<span class="string">'css-loader'</span>,<span class="string">'less-loader'</span>],</div><div class="line">                  fallback: <span class="string">'vue-style-loader'</span></div><div class="line">                &#125;)</div><div class="line">              &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"><span class="string">##### ExtractTextPlugin 在2.x版本的变更</span></div><div class="line"><span class="string">1、plugins配置,独立导出CSS文件写法不变  </span></div><div class="line"><span class="string">`</span><span class="keyword">new</span> ExtractTextPlugin(<span class="string">"../css/[name].css"</span>)<span class="string">`</span></div><div class="line"><span class="string">2、module配置，loader写法传入参数改为对象。</span></div><div class="line"><span class="string">`</span><span class="string">``</span>js</div><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">    rules: [</div><div class="line">        ...</div><div class="line">        &#123;</div><div class="line">            test: <span class="regexp">/\.(less|css)$/</span>,</div><div class="line">            use: ExtractTextPlugin.extract(&#123;</div><div class="line">                fallback: <span class="string">'style-loader'</span>,</div><div class="line">                use: [<span class="string">'css-loader'</span>, <span class="string">'less-loader'</span>]</div><div class="line">        &#125;)   </div><div class="line">        &#125;</div><div class="line">        ...</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="require-script-…"><a href="#require-script-…" class="headerlink" title="require(script!…)"></a>require(script!…)</h5><p>打包时将其作为全局变量。一般用于引入一些插件，将变量定义到window上，可全局使用。（应注意变量命名冲突，避免污染）<br>版本升级后写法<br><code>require(script-loader!...)</code><br>依赖<code>script-loader</code>包</p>
+<h5 id="require-imports-juquery"><a href="#require-imports-juquery" class="headerlink" title="require(imports?$=juquery..)"></a>require(imports?$=juquery..)</h5><p>作用与上类似，用于指定内部变量。一般用于jquery插件，也可用于指定this等。<br>语法修改为:<br><code>require(imports-loader$=juquery...)</code><br>依赖<code>imports-loader</code>包,并需要单独配置loader。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: <span class="built_in">require</span>.resolve(<span class="string">"jquery"</span>), <span class="comment">// 根据需要引入相应模块</span></div><div class="line">    use: <span class="string">"imports-loader?$=jquery"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,171 +237,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:/2017/11/10/webpack 1.x 升至 webpack 3.x 相关资料/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/05/node项目中使用.yaml做配置文件/" class="archive-article-date">
-  	<time datetime="2017-10-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/05/node项目中使用.yaml做配置文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node项目中使用.yaml做配置文件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/05/node项目中使用.yaml做配置文件/">node项目中使用.yaml做配置文件</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node 项目配置</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/01/three.js之混沌初开/" class="archive-article-date">
-  	<time datetime="2017-09-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/01/three.js之混沌初开/">Three.js 学习笔记之混沌初开</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">three.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/25/css之filter/" class="archive-article-date">
-  	<time datetime="2017-08-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/25/css之filter/">css之fliter属性</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">css3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/25/Vue项目介绍/" class="archive-article-date">
-  	<time datetime="2017-08-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/25/Vue项目介绍/">基于vue-cli + flexible适配移动H5项目说明</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -382,8 +359,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
